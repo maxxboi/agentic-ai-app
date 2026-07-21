@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-blueprint-bg text-blueprint-ink font-body antialiased;
+  background-image: linear-gradient(#1E3A5F 1px, transparent 1px),
+    linear-gradient(90deg, #1E3A5F 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+::selection {
+  background: #5EEAD4;
+  color: #0B1D33;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1E3A5F transparent;
+}
+*::-webkit-scrollbar { width: 8px; }
+*::-webkit-scrollbar-thumb { background: #1E3A5F; border-radius: 4px; }
+
+:focus-visible {
+  outline: 2px solid #5EEAD4;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
